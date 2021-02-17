@@ -13,6 +13,7 @@ source:
 test:
   commands:
     - jar tf bioformats_package.jar
+    - java -cp bioformats_package.jar loci.formats.tools.ImageInfo -nopix test.fake
 
 extra:
   recipe-maintainers:
