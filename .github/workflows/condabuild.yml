@@ -74,6 +74,10 @@ jobs:
           name: artifact-${{ matrix.os }}-64
           path: "${{ steps.condablddir.outputs.condabld }}/*64/bftools-*"
           if-no-files-found: error
+      - name: Download artifacts from build
+        uses: actions/download-artifact@v3
+      - name: List artifacts
+        run: ls -R
 
   upload:
     needs: build
